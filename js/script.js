@@ -54,12 +54,37 @@ If the value of the input variable is equal to the string "email", the event lis
 the disabled attribute from the submit button. If the value of the input variable is not equal to
 the string "email", the event listener will add the disabled attribute to the submit button. */
 submit.disabled = true;
-document.getElementById("exampleInputEmail1").addEventListener("keyup", function (event) {
+document
+  .getElementById("exampleInputEmail1")
+  .addEventListener("keyup", function (event) {
     const text = event.target.value;
     let input = text.toLowerCase();
-    if (input === 'email') {
-        submit.removeAttribute("disabled");
+    if (input === "email") {
+      submit.removeAttribute("disabled");
     } else {
-        submit.setAttribute("disabled", true);
+      submit.setAttribute("disabled", true);
     }
+  });
+
+  
+/* This is an event listener that is listening for a mouseenter event on the element with the id of
+image. When a mouseenter event occurs, the event listener will change the source of the image to the
+image of the bag. This is an event listener that is listening for a mouseleave event on the element
+with the id of image. When a mouseleave event occurs, the event listener will change the source of
+the image to the image of the watch. */
+const image = document.getElementById("image");
+image.addEventListener("mouseenter", function () {
+    this.src = "images/categories/bag.png";
+});
+image.addEventListener("mouseleave", function () {
+    this.src = "images/categories/watch.png";
+});
+
+
+/* This is an event listener that is listening for a double click on the element with the id of
+subscribe. When a double click occurs, the event listener will change the background color of the
+element with the id of subscribe to orange. */
+const subscribe = document.getElementById("subscribe");
+subscribe.addEventListener("dblclick", function () {
+  this.style.backgroundColor = "orange";
 });
